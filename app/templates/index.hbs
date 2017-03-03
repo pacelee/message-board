@@ -1,0 +1,15 @@
+<div class="container">
+  {{add-question message=message sendPost="sendPost"}}
+{{#each model as |message|}}
+  <div class="col-md-8">
+  <div class="panel panel-primary" id="roboto">
+    {{#link-to 'question' message.id}}
+    <h1><strong>Question:</strong> {{message.question}}</h1>
+    {{/link-to}}
+    <p><strong>Author:</strong> {{message.author}}</p>
+
+    {{edit-question message=message update="update"}}
+  </div>
+  </div>
+{{/each}}
+</div>
